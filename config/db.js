@@ -2,11 +2,11 @@
 var mongoose = require('mongoose');
 
 var config = {
-  "db": "jobappDB",  
-  "host": "localhost",  
+  "db": "jobappDB",
+  "host": "localhost",
   "user": "",
   "pw": "",
-  "port": 27017
+  "port": process.env.PORT || 27017
 };
 
 var port = (config.port.length > 0) ? ":" + config.port : '';

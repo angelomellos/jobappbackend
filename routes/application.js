@@ -30,13 +30,11 @@ module.exports = function(app) {
   // POST
   api.recordApplication = function (req, res) {
 
-    var application;
-
     if(typeof req.body == 'undefined'){
       return res.json(500, {message: 'application is undefined'});
     }
 
-    application = new Application(req.body);
+    var application = new Application(req.body);
 
     application.save(function (err) {
       if (err) return res.json(500, err);
@@ -107,7 +105,7 @@ module.exports = function(app) {
 
   app.get('/api/posts', api.applications);
   app.get('/api/post/:id', api.application);
-  app.post('/api/post', api.addPost);
+  app.post('/api/post', api.recordApplication);
   app.put('/api/post/:id', api.editPost);
-  app.delete('/api/post/:id', api.deletePost);
+  //app.delete('/api/post/:id', api.deletePost);
 };
