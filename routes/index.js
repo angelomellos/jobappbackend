@@ -3,7 +3,7 @@ module.exports = function(app) {
 
 	// index.html
 	route.index = function (req, res) {
-	  res.send('hi');
+	  res.json({});
 	};
 
 	app.get('/', route.index);
