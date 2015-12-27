@@ -12,6 +12,9 @@
     "body-parser": "latest",
     "errorhandler": "latest"
 	},
+  "engines": {
+  "node": "0.12.7"
+  },
   "devDependencies": {
     "gulp": "latest",
     "bower": "latest",
@@ -25,5 +28,5 @@
   "scripts": {
     "test" : "gulp test",
     "start": "app.js"
-  }	
+  }
 }
