@@ -1,0 +1,16 @@
+{
+  "name": "jobappbackend",
+  "version": "0.0.1",
+  "description": "for job applications",
+  "private": true,
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
