@@ -3,7 +3,7 @@ module.exports = function(app) {
 
 	// index.html
 	route.index = function (req, res) {
-	  res.json({});
+	  res.render('index', {locals: { routes: app._router.stack }});
 	};
 
 	app.get('/', route.index);
