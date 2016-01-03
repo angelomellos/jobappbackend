@@ -29,13 +29,7 @@ module.exports = function(app) {
 
   // POST
   api.recordApplication = function (req, res) {
-
-    if(typeof req.body == 'undefined'){
-      return res.json(500, {message: 'application is undefined'});
-    }
-
     var application = new Application(req.body);
-
     application.save(function (err) {
       if (err) return res.json(500, err);
       else return res.json(201, application.toObject());

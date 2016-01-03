@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
 
 var fields = {
 	companyName: { type: String },
-	submitted: { type: Date , default: Date.now }
+	submitted: { type: Date , default: Date.now },
+	userId: {type: String}
 };
 
 var applicationSchema = new Schema(fields);
