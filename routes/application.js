@@ -98,8 +98,8 @@ module.exports = function(app) {
 
 
   app.get('/api/posts', api.applications);
-  app.get('/api/post/:id', api.application);
-  app.post('/api/post', api.recordApplication);
+  app.get('/api/apps/:id', api.application);
+  app.post('/api/apply', api.recordApplication);
   app.put('/api/post/:id', api.editPost);
   //app.delete('/api/post/:id', api.deletePost);
 };
