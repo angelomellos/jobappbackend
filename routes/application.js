@@ -19,7 +19,7 @@ module.exports = function(app) {
     Application.find({userId: req.body.userId})
     .exec(function(err,apps){
       if (err) return res.json(500, err);
-      res.send({apps: apps});
+      res.send(apps);
     });
   };
 
