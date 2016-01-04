@@ -17,14 +17,12 @@ module.exports = function(app) {
 
   api.userApps = function (req, res) {
     console.log('userId: ', req.body.userId);
-    Application.find({userId: req.body.userId})
-    .exec(function(apps){
+    Application.find({userId: req.body.userId}, function(apps){
       console.log('apps === ', apps);
       res.send({apps: apps});
-    });
+    })
   };
 
-  // POST
   api.recordApplication = function (req, res) {
     var application = new Application(req.body);
     application.save(function (err) {
