@@ -18,7 +18,8 @@ module.exports = function(app) {
   api.userApps = function (req, res) {
     Application.find({userId: req.body.userId})
     .exec(function(apps){
-      res.send(apps);
+      console.log('apps === ', apps);
+      res.send({apps: apps});
     });
   };
 
