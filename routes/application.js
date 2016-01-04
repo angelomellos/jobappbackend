@@ -15,15 +15,10 @@ module.exports = function(app) {
     });
   };
 
-  // GET
-  api.application = function (req, res) {
-    var id = req.params.id;
-    Post.findOne({ '_id': id }, function(err, post) {
-      if (err) {
-        res.json(404, err);
-      } else {
-        res.json(200, {post: post});
-      }
+  api.userApps = function (req, res) {
+    Application.find({userId: req.body.userId})
+    .exec(function(apps){
+      res.send(apps);
     });
   };
 
@@ -98,7 +93,7 @@ module.exports = function(app) {
 
 
   app.get('/api/posts', api.applications);
-  app.get('/api/apps/:id', api.application);
+  app.post('/api/user/apps', api.userApps);
   app.post('/api/apply', api.recordApplication);
   app.put('/api/post/:id', api.editPost);
   //app.delete('/api/post/:id', api.deletePost);
