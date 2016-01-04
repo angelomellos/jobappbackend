@@ -16,11 +16,11 @@ module.exports = function(app) {
   };
 
   api.userApps = function (req, res) {
-    console.log('userId: ', req.body.userId);
-    Application.find({userId: req.body.userId}, function(apps){
-      console.log('apps === ', apps);
+    Application.find({userId: req.body.userId})
+    .exec(function(err,apps){
+      if (err) return res.json(500, err);
       res.send({apps: apps});
-    })
+    });
   };
 
   api.recordApplication = function (req, res) {
