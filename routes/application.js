@@ -16,6 +16,7 @@ module.exports = function(app) {
   };
 
   api.userApps = function (req, res) {
+    console.log('userId: ', req.body.userId);
     Application.find({userId: req.body.userId})
     .exec(function(apps){
       console.log('apps === ', apps);
